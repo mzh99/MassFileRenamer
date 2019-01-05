@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
+    <RootNamespace>OCSS.MHMassFileRenamer</RootNamespace>
+    <PackageId>OCSS.MHMassFileRenamer</PackageId>
+    <Authors>MH</Authors>
+    <Company>OC Software Solutions</Company>
+    <PackageTags>OCSS Utility Rename Files Scripting</PackageTags>
+    <Copyright>© 2019, OC Software Solution</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Description>C# Class Library for mass file renaming using run-time C# scripting intelligence.</Description>
+    <PackageProjectUrl>https://github.com/mzh99/MassFileRenamer</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/mzh99/MassFileRenamer.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="2.10.0" />
+    <PackageReference Include="OCSS.StringUtil.MHString" Version="1.0.1" />
+    <PackageReference Include="OCSS.Util.DirSearch" Version="1.0.1" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,3 @@
+Processor: 
+	http://www.newegg.com/Product/Product.aspx?Item=N82E16819117649&ignorebbr=1	
+	http://www.newegg.com/Product/Product.aspx?Item=N82E16819117647&ignorebbr=1

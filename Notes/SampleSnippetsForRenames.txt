@@ -1,0 +1,16 @@
+// lowercase
+FileName.ToLower()
+// uppercase
+FileName.ToUpper()
+// Letters only + renumber
+Path.GetFileNameWithoutExtension(FileName).LetterOnly() + FileNum.ToString("D3") + Path.GetExtension(FileName)
+// extension change
+Path.ChangeExtension(FileName, ".new")
+// remove extension
+Path.ChangeExtension(FileName, null)
+// renumber
+FileNum.ToString("D3") + Path.GetExtension(FileName)
+// Date Prefix
+CreationTime.ToString("yyyy-MM-dd_") + FileName
+// DateTime Prefix
+CreationTime.ToString("yyyy-MM-dd_HHmmss_") + FileName
