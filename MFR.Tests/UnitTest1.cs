@@ -4,14 +4,16 @@ using OCSS.MHMassFileRenamer;
 namespace MFR.Tests {
 
    [TestClass]
-   public class UnitTest1 {
+   public class ImplementationTest1 {
       public static string ASIS_CODE = "FileName";
       public static string CHANGE_TOLOWER_CODE = "FileName.ToLower()";
       public static string RENAME_EXT_CODE = @"Path.ChangeExtension(FileName, "".dat"")";
       public static string MHSTRING1_CODE = "FileName.StrRight(6)";
       public static string BAD_CODE = "crash = true";
 
+      //todo: to run your tests locally, change these two paths to reflect your system
       public static string TEST_FILES_FOLDER = @"E:\Data\Source\CS\ClassLib\MassFileRenamer\MFR.Tests\TestDataFiles\";
+      public static string ROOTDRIVE_PATH_WITH_NO_FILES = @"E:\";
 
       [TestMethod]
       public void SubTraversalIsSuccessful() {
@@ -35,7 +37,7 @@ namespace MFR.Tests {
 
       [TestMethod]
       public void RootFolderIsSuccessful() {
-         MassFileRenamer mfr = new MassFileRenamer(@"E:\", null, false, CHANGE_TOLOWER_CODE);
+         MassFileRenamer mfr = new MassFileRenamer(ROOTDRIVE_PATH_WITH_NO_FILES, null, false, CHANGE_TOLOWER_CODE);
          var result = mfr.ProcessFiles();
          Assert.IsTrue(result.FileCount > 0, "file count is 0");
          Assert.IsTrue(result.FolderCount > 0, "folder count is 0");
