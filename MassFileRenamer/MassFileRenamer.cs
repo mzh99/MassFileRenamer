@@ -44,8 +44,8 @@ namespace OCSS.MHMassFileRenamer {
          nameChanges.Clear();
       }
 
-      private List<OldAndNewNames> nameChanges;
-      private List<string> errorList;
+      private readonly List<OldAndNewNames> nameChanges;
+      private readonly List<string> errorList;
 
       public RenameResults() {
          this.FileCount = 0;
@@ -88,7 +88,7 @@ namespace OCSS.MHMassFileRenamer {
          if (string.IsNullOrWhiteSpace(renameCode))
             throw new ArgumentException("Rename code must be specified.");
          this.StartingPath = startPath;
-         this.FileMask = string.IsNullOrEmpty(mask) ? DirSearch.MASK_ALL_FILES_AND_FOLDERS : mask;
+         this.FileMask = string.IsNullOrEmpty(mask) ? DirSearch.SearchMaskAllFilesAndFolders : mask;
          this.ProcessSubFolders = processSubs;
          this.RenameCode = renameCode;
          this.RenameFormatter = renameFormatter;
@@ -108,7 +108,7 @@ namespace OCSS.MHMassFileRenamer {
             LogErr("Script code did not compile. Error: " + err);
          }
          else {
-            dirSearch = new DirSearch(FileMask, StartingPath, AttrSearchType.stAny, DirSearch.ALLFILEATTRIB_MINUS_SYS_AND_HIDDEN, ProcessSubFolders);
+            dirSearch = new DirSearch(FileMask, StartingPath, AttrSearchType.AnyMatch, DirSearch.AllAttributesMinusSysAndHidden, ProcessSubFolders);
             dirSearch.OnFileMatch += DirSearch_OnFileMatch;
             dirSearch.OnFolderMatch += DirSearch_OnFolderMatch;
             dirSearch.OnFileExcept += DirSearch_OnFileExcept;
